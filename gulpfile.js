@@ -1,13 +1,11 @@
 "use strict";
 
 // Load plugins
-const autoprefixer = require("gulp-autoprefixer");
 const browsersync = require("browser-sync").create();
 const cleanCSS = require("gulp-clean-css");
-const del = require("del");
+const del = require('del')
 const gulp = require("gulp");
 const header = require("gulp-header");
-const merge = require("merge-stream");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass")(require("sass"));
@@ -48,28 +46,22 @@ function clean() {
 }
 
 // Bring third party dependencies from node_modules into vendor directory
-function modules() {
-  // Bootstrap
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
+function copyBootstrap() {
+  return gulp.src('./node_modules/bootstrap/dist/**/*')
     .pipe(gulp.dest('./vendor/bootstrap'));
-  // Font Awesome
-  var fontAwesome = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/all.min.css')
-    .pipe(gulp.dest('./vendor/fontawesome-free/css'));
-  var fontAwesomeImages = gulp.src([
-    './node_modules/@fortawesome/fontawesome-free/webfonts/**.*',
-  ])
-    .pipe(gulp.dest('./vendor/fontawesome-free/webfonts'));
-
-  // jQuery Easing
-  var jqueryEasing = gulp.src('./node_modules/jquery.easing/jquery.easing.min.js')
-    .pipe(gulp.dest('./vendor/jquery-easing'));
-  // jQuery
-  var jquery = gulp.src([
-    './node_modules/jquery/dist/jquery.min.js',
-  ])
-    .pipe(gulp.dest('./vendor/jquery'));
-  return merge(bootstrap, fontAwesome, fontAwesomeImages, jquery, jqueryEasing);
 }
+
+function copyJqueryEasing() {
+  return gulp.src('./node_modules/jquery.easing/jquery.easing.min.js')
+    .pipe(gulp.dest('./vendor/jquery-easing'));
+}
+
+function copyJquery() {
+  return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+    .pipe(gulp.dest('./vendor/jquery'));
+}
+
+const modules = gulp.parallel(copyBootstrap, copyJqueryEasing, copyJquery);
 
 // CSS task
 function css() {
@@ -81,10 +73,6 @@ function css() {
       includePaths: "./node_modules",
     }))
     .on("error", sass.logError)
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
     .pipe(header(banner, {
       pkg: pkg
     }))
@@ -93,8 +81,7 @@ function css() {
       suffix: ".min"
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("./css"))
-    .pipe(browsersync.stream());
+    .pipe(gulp.dest("./css"));
 }
 
 // JS task
@@ -111,8 +98,7 @@ function js() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./js'))
-    .pipe(browsersync.stream());
+    .pipe(gulp.dest('./js'));
 }
 
 // Watch files
@@ -124,7 +110,7 @@ function watchFiles() {
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js));
+const build = gulp.series(vendor, css, js);
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
