@@ -1,335 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Jaspreet Singh — Senior Software Engineer, Melbourne</title>
+<meta name="description" content="Jaspreet Singh — senior software engineer in Melbourne. Backend and platform engineering: Go, gRPC, Cloud Spanner, Kubernetes, OpenTelemetry. Eleven years, rendered as a trace.">
+<meta name="author" content="Jaspreet Singh">
+<link rel="canonical" href="https://www.jaspreet.info/">
+<meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131720" media="(prefers-color-scheme: dark)">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description"
-    content="This is the homepage of Jaspreet Singh. Github: https://www.github.com/tagpro | Linkedin: https://www.linkedin.com/in/jaspreet94/">
-  <meta name="author" content="Jaspreet Singh | tagpro">
-  <link rel="icon" href="favicon.png">
-  <title>Jaspreet Singh | Info</title>
-  <meta name="theme-color" content="#008cba">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="jaspreet.info">
+<meta property="og:url" content="https://www.jaspreet.info/">
+<meta property="og:title" content="Jaspreet Singh — Senior Software Engineer, Melbourne">
+<meta property="og:description" content="Backend and platform engineering: Go, gRPC, Cloud Spanner, Kubernetes, OpenTelemetry. Eleven years, rendered as a trace.">
+<meta property="og:image" content="https://www.jaspreet.info/img/Selfie-2025-08.jpg">
+<meta property="og:image:alt" content="Jaspreet Singh">
+<meta property="profile:first_name" content="Jaspreet">
+<meta property="profile:last_name" content="Singh">
+<meta name="twitter:card" content="summary">
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Resolve the theme before first paint so the page never flashes. -->
+<script>
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  try {
+    var stored = localStorage.getItem('theme');
+    d.dataset.theme = (stored === 'light' || stored === 'dark') ? stored
+      : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch (e) {
+    d.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+})();
+</script>
 
-  <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140864554-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-140864554-2');
-  </script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jaspreet Singh",
+  "url": "https://www.jaspreet.info/",
+  "image": "https://www.jaspreet.info/img/Selfie-2025-08.jpg",
+  "jobTitle": "Senior Software Engineer",
+  "email": "mailto:findjsk@gmail.com",
+  "telephone": "+61450327168",
+  "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressCountry": "AU" },
+  "sameAs": [
+    "https://github.com/tagpro",
+    "https://www.linkedin.com/in/jaspreet94"
+  ],
+  "knowsAbout": [
+    "Go", "gRPC", "Protocol Buffers", "Google Cloud Spanner", "Kubernetes",
+    "OpenTelemetry", "Distributed systems", "Python", "PostgreSQL"
+  ],
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Australian National University" },
+    { "@type": "CollegeOrUniversity", "name": "VIT University" }
+  ]
+}
+</script>
 </head>
+<body>
 
-<body id="page-top">
+<a class="skip" href="#top">Skip to content</a>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Jaspreet Singh</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/Selfie-2025-08.jpg" alt="Jaspreet Singh">
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contact">Contact me</a>
-        </li>
+<header class="topbar container">
+  <a class="wordmark" href="#top">jaspreet.info</a>
+  <nav class="topnav" aria-label="Site">
+    <a href="#experience">experience</a>
+    <a href="#skills">skills</a>
+    <a href="#contact">contact</a>
+    <a href="assets/Jaspreet-Singh-CV.pdf">cv.pdf</a>
+    <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to dark theme">dark mode</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ================= hero ================= -->
+  <section class="hero container" aria-label="Introduction">
+    <div class="hero-text">
+      <h1 class="hero-name">Jaspreet Singh</h1>
+      <p class="tagline">Senior software engineer &middot; backend &amp; platform &middot; Melbourne, Australia</p>
+      <p class="lede">
+        I build the backend systems people never see and can&rsquo;t do without: the
+        ANZ&nbsp;Plus transactions service, designed from the ground up for 3,000+
+        transactions a second; Zendesk&rsquo;s Express Sandbox, which cut provisioning
+        for the largest customers from over a month to under a week; and the OTel
+        operator and metrics API behind Canva&rsquo;s observability platform.
+      </p>
+      <ul class="chips">
+        <li><a href="mailto:findjsk@gmail.com">findjsk@gmail.com</a></li>
+        <li><a href="https://github.com/tagpro">github.com/tagpro</a></li>
+        <li><a href="https://www.linkedin.com/in/jaspreet94">linkedin.com/in/jaspreet94</a></li>
+        <li class="self-link"><a href="assets/Jaspreet-Singh-CV.pdf">cv.pdf</a></li>
+        <!-- Printed, this page is the CV: it needs a phone number on sheet one
+             and must not offer a link to itself. -->
+        <li class="print-only"><a href="tel:+61450327168">+61 450 327 168</a></li>
       </ul>
     </div>
-  </nav>
+    <img class="portrait" src="img/Selfie-2025-08.jpg" alt="Jaspreet Singh" width="868" height="868">
+  </section>
 
-  <div class="container-fluid p-0">
+  <!-- ================= trace =================
+       Axis: Jan 2015 -> Aug 2026 = 139 months. Every --l and --w below is
+       (months from Jan 2015)/139 and (duration in months)/139. Keep them
+       honest: the footer claims these lengths are real durations. -->
+  <section class="section container" id="experience" aria-label="Experience">
+    <p class="eyebrow">Experience &mdash; 9 spans &middot; 2015 &rarr; now</p>
+    <h2 class="section-title">Eleven years, read as a trace</h2>
+    <p class="section-note">
+      This is how I read production systems &mdash; so here is the career the same
+      way. Span length is real duration, to the month.<span class="screen-only">
+      Select a span to inspect the role.</span>
+    </p>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-      <div class="w-100">
-        <h1 class="mb-0">Jaspreet
-          <span class="text-primary">Singh</span>
-        </h1>
-        <div class="subheading mb-5"><a href="tel:+61450327168">+61 450 327 168</a> ·
-          <a href="mailto:findjsk@gmail.com">findjsk@gmail.com</a>
-        </div>
-        <p class="lead mb-5">
-          Technology enthusiast. Good Problem Solving Skills. Experienced in Golang, gRPC, Protobuf, Python, Django, SQL, REST, AWS/GCP. Also, have worked on Google maps, frontend technologies, Docker, Kubernetes etc. Completed my Master of Computing from ANU specialising in AI. Like to learn new things, build products from scratch, listen to music and play table tennis in my spare time.
-        </p>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/jaspreet94/">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="https://www.github.com/tagpro/">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="assets/Resume.pdf" target="_blank" title="Download Resume">
-            <i class="fa-solid fa-download"></i>
-          </a>
-        </div>
+    <div class="trace">
+      <div class="t-axis" aria-hidden="true">
+        <i class="edge-l" style="left:0">2015</i>
+        <i class="d-only" style="left:17.266%">2017</i>
+        <i class="d-only" style="left:34.532%">2019</i>
+        <i class="m-only" style="left:43.165%">2020</i>
+        <i class="d-only" style="left:51.799%">2021</i>
+        <i class="d-only" style="left:69.065%">2023</i>
+        <i style="left:86.331%">2025</i>
+        <i class="now" style="left:100%">now</i>
       </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-      <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Software Engineer</h3>
-            <div class="subheading mb-3">ANZ Bank</div>
-            <p>
-              Working on ANZ Plus as a backend engineer in payments team. <br>
-              I am part of the team which is responsible for creating payments, managing scheduled payments, saving contacts and other things around the payments team. <br>
-            </p>
-            <h5>Technologies: </h5>
-            <p>
-              Golang, gRPC, Docker + Kubernetes, GCP, Cloud Spanner database
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">May 2025 - Present</span>
-          </div>
+      <div class="t-body">
+        <div class="t-gridlines" aria-hidden="true">
+          <i style="left:8.633%"></i><i style="left:17.266%"></i><i style="left:25.899%"></i>
+          <i style="left:34.532%"></i><i style="left:43.165%"></i><i style="left:51.799%"></i>
+          <i style="left:60.432%"></i><i style="left:69.065%"></i><i style="left:77.698%"></i>
+          <i style="left:86.331%"></i><i style="left:94.964%"></i>
+          <i class="now-line" style="left:100%"></i>
         </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Senior Software Engineer</h3>
-            <div class="subheading mb-3">Zendesk</div>
-            <p>
-              Worked in API team to get all APIs in zendesk to publish API docs and postman collections  <br>
-              Working in Sandbox team that is responsible for supporting sandboxes for Zendesk accounts  <br>
-              Mentored junior devs along with leading the work on publishing Zendesk APIs to postman  <br>
-            </p>
-            <h5>Technologies: </h5>
-            <p>
-              Python, Celery, Kubernetes, Golang, OpenAPI, AWS
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">September 2021 - Mar 2025</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Software Engineer</h3>
-            <div class="subheading mb-3">ANZ Bank</div>
-            <p>
-              Worked on ANZ Plus app as a backend developer. <br>
-              I was a part of the team that dealt with getting transactions from the core bank, processing and sending the bank transactions to the ANZ plus app.  <br>
-            </p>
-            <h5>Technologies: </h5>
-            <p>
-              Golang, gRPC, Docker + Kubernetes, GCP, Cloud Spanner database, Cloud Dataflow
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">September 2019 - September 2021</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Co-founder and Software Engineer</h3>
-            <div class="subheading mb-3">LoyalT, Canberra</div>
-            <p>
-              LoyalT is an all in one rewards management platform designed to help merchants digitize their loyalty program. Increased throughput by streamlining development and deployment strategies.  <br>
-            </p>
-            <h5>Technologies: </h5>
-            <p>
-              Python, JavaScript, Django, Angular.js, ionic 3 (Android + iOS), AWS, MySQL
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2018 - April 2019</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Casual Software Developer</h3>
-            <div class="subheading mb-3">CSIRO, Canberra</div>
-            <p>
-              Worked on a web application for biologists to have all the Germplasm in one place, modernised and optimised existing apps to author better reliability and a bug-free and error-free experience.  <br>
-            </p>
-            <h5>Technologies: </h5>
-            <p>
-              Python, JavaScript, Ember JS, Node JS, Sails JS, Express, Docker, PostgreSQL, MySQL
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">December 2017 - March 2019</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Software developer intern</h3>
-            <div class="subheading mb-3">Aristotle Metadata Registry, Canberra</div>
-            <p>
-              Redesigned document download and reduced latency and eradicated all existing network issues by introducing asynchronous downloads and caching the generated downloads.  <br>
-            </p>
-            <h5>Technologies: </h5>
-            <p>
-              Python, Django, Celery, Redis
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2018 - October 2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Technical Analyst</h3>
-            <div class="subheading mb-3">Hashedin Technologies, Bengaluru, India </div>
-            <p>
-              Designed and Developed SASS Web Applications. Contributed on 6  full time projects. Experienced the entire software engineering life cycle from gathering project requirements till delivering the project.  <br>
-              Was involved in training interns with technology stack and mentoring them to transition into the company.  <br>
-            </p>
-            <h5>Technologies: </h5>
-            <p>
-              Python, Django, HTML/CSS, JavaScript, ReactJS, Redux, React Native, Angular JS, MySQL, AWS, Logentries, NodeJS, ExpressJS
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">January 2015 - March 2017</span>
-          </div>
-        </div>
-
-
+        <ol class="t-rows">
+          <li class="t-row t-root">
+            <span class="t-label">career <span class="t-dur-m">&middot; 11 yr 7 mo</span></span>
+            <span class="t-track" style="--l:0%; --w:100%; --d:0s"><span class="t-bar root" aria-hidden="true"></span><span class="sr-only">Career: January 2015 to now, 11 years 7 months.</span></span>
+          </li>
+          <li><a class="t-row" href="#role-hashedin">
+            <span class="t-label">Hashedin<span class="t-dur-m"> &middot; 2 yr 3 mo</span></span>
+            <span class="t-track" style="--l:0%; --w:19.424%; --d:0.05s"><span class="t-bar early" aria-hidden="true"></span><span class="t-dur" aria-hidden="true">2 yr 3 mo</span></span>
+            <span class="sr-only">Technical Analyst, Hashedin Technologies, January 2015 to March 2017, 2 years 3 months. View details.</span>
+          </a></li>
+          <li><a class="t-row" href="#education">
+            <span class="t-label">ANU &middot; MComp<span class="t-dur-m"> &middot; 2 yr</span></span>
+            <span class="t-track" style="--l:21.583%; --w:17.986%; --d:0.1s"><span class="t-bar study" aria-hidden="true"></span><span class="t-dur" aria-hidden="true">2 yr</span></span>
+            <span class="sr-only">Master of Computing, Australian National University, July 2017 to July 2019, studied alongside the next three roles. View education.</span>
+          </a></li>
+          <li><a class="t-row" href="#role-csiro">
+            <span class="t-label">CSIRO<span class="t-dur-m"> &middot; 1 yr 4 mo</span></span>
+            <span class="t-track" style="--l:25.18%; --w:11.511%; --d:0.15s"><span class="t-bar early" aria-hidden="true"></span><span class="t-dur" aria-hidden="true">1 yr 4 mo</span></span>
+            <span class="sr-only">Casual Software Developer, CSIRO, December 2017 to March 2019, 1 year 4 months. View details.</span>
+          </a></li>
+          <li><a class="t-row" href="#role-aristotle">
+            <span class="t-label">Aristotle<span class="t-dur-m"> &middot; 3 mo</span></span>
+            <span class="t-track" style="--l:30.935%; --w:2.158%; --d:0.2s"><span class="t-bar early" aria-hidden="true"></span><span class="t-dur" aria-hidden="true">3 mo</span></span>
+            <span class="sr-only">Software Developer Intern, Aristotle Metadata Registry, August to October 2018, 3 months. View details.</span>
+          </a></li>
+          <li><a class="t-row" href="#role-loyalt">
+            <span class="t-label">LoyalT<span class="t-dur-m"> &middot; 5 mo</span></span>
+            <span class="t-track" style="--l:33.813%; --w:3.597%; --d:0.25s"><span class="t-bar early" aria-hidden="true"></span><span class="t-dur" aria-hidden="true">5 mo</span></span>
+            <span class="sr-only">Co-founder and Engineer, LoyalT, December 2018 to April 2019, 5 months. View details.</span>
+          </a></li>
+          <li><a class="t-row" href="#role-anz-transactions">
+            <span class="t-label">ANZ &middot; transactions<span class="t-dur-m"> &middot; 2 yr</span></span>
+            <span class="t-track" style="--l:40.288%; --w:17.266%; --d:0.3s"><span class="t-bar banking" aria-hidden="true"></span><span class="t-dur" aria-hidden="true">2 yr</span></span>
+            <span class="sr-only">Software Engineer, ANZ Bank transactions service, September 2019 to September 2021, 2 years. View details.</span>
+          </a></li>
+          <li><a class="t-row" href="#role-zendesk">
+            <span class="t-label">Zendesk<span class="t-dur-m"> &middot; 3 yr 7 mo</span></span>
+            <span class="t-track" style="--l:57.554%; --w:30.935%; --d:0.35s"><span class="t-bar saas" aria-hidden="true"></span><span class="t-dur before" aria-hidden="true">3 yr 7 mo</span></span>
+            <span class="sr-only">Senior Software Engineer, Zendesk, September 2021 to March 2025, 3 years 7 months. View details.</span>
+          </a></li>
+          <li><a class="t-row" href="#role-anz-payments">
+            <span class="t-label">ANZ &middot; payments<span class="t-dur-m"> &middot; 5 mo</span></span>
+            <span class="t-track" style="--l:89.209%; --w:3.597%; --d:0.4s"><span class="t-bar banking" aria-hidden="true"></span><span class="t-dur before" aria-hidden="true">5 mo</span></span>
+            <span class="sr-only">Senior Software Engineer, ANZ Bank payments, May 2025 to September 2025, 5 months. View details.</span>
+          </a></li>
+          <li><a class="t-row" href="#role-canva">
+            <span class="t-label">Canva<span class="t-dur-m"> &middot; 7 mo</span></span>
+            <span class="t-track" style="--l:94.964%; --w:5.036%; --d:0.45s"><span class="t-bar obs" aria-hidden="true"></span><span class="t-dur before" aria-hidden="true">7 mo</span></span>
+            <span class="sr-only">Software Engineer, Canva, January to July 2026, 7 months. View details.</span>
+          </a></li>
+        </ol>
       </div>
-
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Australian National University, Canberra</h3>
-            <div class="subheading mb-3">Master of Computing</div>
-            <p>CGPA: 5.7 / 7</p>
-          </div>
-          <div class="resume-date">
-            <span class="text-primary">July 2017 - July 2019</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">VIT University, Vellore, India</h3>
-            <div class="subheading mb-3">Bachelor of Technology in Computer Science and Engineering</div>
-            <p>CGPA: 7.9 / 10</p>
-          </div>
-          <div class="resume-date">
-            <span class="text-primary">July 2011 - June 2015</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
-
-        <div class="subheading mb-3">Programming Languages, Frameworks &amp; Tools</div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa-solid fa-check"></i>
-            Programming Languages: Golang, Python, JavaScript, Node.js
-          </li>
-          <li>
-            <i class="fa-li fa-solid fa-check"></i>
-            Frameworks: gRPC, Protobuf, Django, Angular.js, React.js, Ember.js, ionic
-          </li>
-          <li>
-            <i class="fa-li fa-solid fa-check"></i>
-            Tools: GCP, AWS, Docker, k8s
-          </li>
+      <div class="trace-foot">
+        <ul class="legend">
+          <li><i class="sw banking" aria-hidden="true"></i>banking systems</li>
+          <li><i class="sw saas" aria-hidden="true"></i>SaaS infrastructure</li>
+          <li><i class="sw obs" aria-hidden="true"></i>observability</li>
+          <li><i class="sw early" aria-hidden="true"></i>early career</li>
+          <li><i class="sw study" aria-hidden="true"></i>study</li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <hr class="m-0">
+    <!-- ============ span details ============ -->
+    <div class="roles">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p>Apart from being a web developer, I enjoy my time playing Table Tennis, FIFA, badminton, football (soccer)
-          or, running. </p>
-        <p class="mb-0">
-          I also like to work visit new places nearby and have a go at doing something new.
-        </p>
-      </div>
-    </section>
+      <details class="role obs" id="role-canva" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">Canva</span>
+          <span class="role-title">Software Engineer &middot; Melbourne</span>
+          <span class="role-dates">Jan &ndash; Jul 2026 &middot; 7 mo</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Go &middot; Terraform &middot; jsonnet &middot; TypeScript &middot; React &middot; Java &middot; protobuf &middot; AWS</p>
+          <ul>
+            <li>Shipped the OTel operator for the Metrics team, managing multiple OpenTelemetry collector instances within a Kubernetes cluster.</li>
+            <li>Shipped the metrics API as part of the Observability API, available to every engineer at Canva.</li>
+          </ul>
+        </div>
+      </details>
 
-    <hr class="m-0">
+      <details class="role banking" id="role-anz-payments" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">ANZ Bank &middot; payments</span>
+          <span class="role-title">Senior Software Engineer &middot; Melbourne</span>
+          <span class="role-dates">May &ndash; Sep 2025 &middot; 5 mo</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Go &middot; Google Cloud Spanner &middot; GCP &middot; gRPC &middot; protobuf</p>
+          <ul>
+            <li>Developed and maintained gRPC microservices for the ANZ Plus payment service in Go on Google Cloud Run &mdash; deploying to production, owning reliability, and carrying the on-call pager.</li>
+            <li>Led the refactor of international-payment validation into multiple APIs: the logic became configurable for any integrating API and lives in one place, so behaviour never diverges between them.</li>
+            <li>Worked with stakeholders to gather and validate requirements for updating the fraud-check integration to send international payment details to the external service.</li>
+            <li>Improved existing unit tests that weren&rsquo;t asserting the arguments sent to mocked interfaces &mdash; and found real bugs in the process.</li>
+          </ul>
+        </div>
+      </details>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="contact">
-      <div class="w-100">
-        <h2 class="mb-5">Contact Info</h2>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa-solid fa-phone text-danger"></i>
-            <a href="tel:+61450327168">+61 450 327 168</a></li>
-          <li>
-            <i class="fa-li fa-solid fa-at text-danger"></i>
-            <a target="_blank" href="mailto:findjsk@gmail.com">findjsk@gmail.com</a></li>
+      <details class="role saas" id="role-zendesk" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">Zendesk</span>
+          <span class="role-title">Senior Software Engineer &middot; Melbourne</span>
+          <span class="role-dates">Sep 2021 &ndash; Mar 2025 &middot; 3 yr 7 mo</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Go &middot; Python &middot; Flask &middot; Celery &middot; AWS &middot; MySQL + Aurora &middot; Redis</p>
+          <ul>
+            <li>Architected and led <em>Express Sandbox</em>: cloning only essential resources &mdash; tickets plus their linked organizations &mdash; instead of all production data. It covers 95% of use cases and cut provisioning for data-heavy customers like Shopify from over a month to under a week.</li>
+            <li>Led publishing most of Zendesk&rsquo;s public APIs via the <em>Run in Postman</em> button &mdash; dividing the work into logical steps and mentoring an intern to own the implementation end-to-end within three months.</li>
+            <li>Built a proof of concept for versioning Zendesk APIs behind an easy-to-configure Go middleware; a leadership and priority change stopped it before production.</li>
+            <li>Owned the sandbox service in production: regular deploys, a fixed on-call schedule, and unit, regression, and integration suites &mdash; with a risk assessment recorded for every pull request that shipped.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="role banking" id="role-anz-transactions" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">ANZ Bank &middot; transactions</span>
+          <span class="role-title">Software Engineer &middot; Melbourne</span>
+          <span class="role-dates">Sep 2019 &ndash; Sep 2021 &middot; 2 yr</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Go &middot; Google Cloud Spanner &middot; GCP &middot; gRPC &middot; protobuf &middot; Cloud Dataflow</p>
+          <ul>
+            <li>Designed and implemented the transactions service for the ANZ Plus app from the ground up &mdash; built to support 3,000+ bank transactions per second from core banking systems.</li>
+            <li>Kept the architecture and gRPC APIs tenant-generic &mdash; ready for the ANZ Plus app, open banking, and whatever came next &mdash; working through the proposals with mobile engineers and product owners.</li>
+            <li>Implemented a bi-directional streaming API syncing transactions to mobile: multiple message types multiplexed over a single stream with goroutines, acknowledgements stored so every transaction reaches the app at least once.</li>
+            <li>Designed the Spanner schema around interleaved tables and hand-optimised the SQL to take full advantage of Cloud Spanner&rsquo;s performance.</li>
+            <li>Instrumented monitoring and tracing with OpenTracing and OpenMetrics (now OpenTelemetry), defined CRDs, and containerised the services for Kubernetes &mdash; alongside integration and end-to-end test suites.</li>
+            <li>Integrated <em>Look Who&rsquo;s Charging</em> to enrich transactions with merchant details, addresses, and coordinates &mdash; including their webhook for future merchant updates.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="role early" id="role-loyalt" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">LoyalT</span>
+          <span class="role-title">Co-founder &amp; Engineer &middot; Canberra</span>
+          <span class="role-dates">Dec 2018 &ndash; Apr 2019 &middot; 5 mo</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Python &middot; Django &middot; Postgres &middot; Angular &middot; Ionic</p>
+          <ul>
+            <li>Co-founded LoyalT, a SaaS platform for small and medium merchants to digitise paper loyalty programs and reward their customers.</li>
+            <li>Built the entire backend in Python/Django on Postgres, and the frontend in Angular and Ionic for a cross-platform Android and iOS experience.</li>
+            <li>Signed up 10 merchants to test the alpha &mdash; running the full product lifecycle from store-owner conversations to MVP and beyond.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="role early" id="role-aristotle" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">Aristotle Metadata Registry</span>
+          <span class="role-title">Software Developer Intern &middot; Canberra</span>
+          <span class="role-dates">Aug &ndash; Oct 2018 &middot; 3 mo</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Python &middot; Django &middot; Celery &middot; Redis</p>
+          <ul>
+            <li>Redesigned document downloads with asynchronous generation and cached results &mdash; reducing latency and eradicating the existing network issues.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="role early" id="role-csiro" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">CSIRO</span>
+          <span class="role-title">Casual Software Developer &middot; Canberra</span>
+          <span class="role-dates">Dec 2017 &ndash; Mar 2019 &middot; 1 yr 4 mo</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Ember.js &middot; Node.js &middot; Express &middot; Python &middot; PostgreSQL &middot; Docker</p>
+          <ul>
+            <li>Migrated a legacy Ember.js v1 codebase to v3, automating much of the syntax migration with Python.</li>
+            <li>Worked directly with scientists studying germplasm &mdash; genetic material for plants &mdash; to find the feature gaps in the PlantSTEM platform and build what their experiments needed; fixed long-standing bugs in the legacy system along the way.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="role early" id="role-hashedin" open>
+        <summary>
+          <span class="chev" aria-hidden="true"></span>
+          <span class="role-org">Hashedin Technologies</span>
+          <span class="role-title">Technical Analyst &middot; Bengaluru, India</span>
+          <span class="role-dates">Jan 2015 &ndash; Mar 2017 &middot; 2 yr 3 mo</span>
+        </summary>
+        <div class="role-body">
+          <p class="role-tech">Python &middot; Django &middot; React &middot; Angular.js &middot; MySQL &middot; AWS</p>
+          <ul>
+            <li>Delivered six full-stack applications in two years &mdash; mostly Python and Django with Angular.js and React &mdash; for US clients and multinationals like Honeywell: enterprise exposure from the first year of a career.</li>
+            <li>Taught Agile methodologies to new interns alongside peers, as part of Hashedin&rsquo;s training culture.</li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ================= skills ================= -->
+  <section class="section container" id="skills" aria-label="Skills">
+    <p class="eyebrow">Skills</p>
+    <h2 class="section-title">Toolbox</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Languages &amp; data stores</h3>
+        <ul class="tags">
+          <li>Go</li><li>Python</li><li>JavaScript / TypeScript</li><li>Postgres</li>
+          <li>Google Cloud Spanner</li><li>Aurora DB / MySQL</li>
         </ul>
       </div>
-    </section>
+      <div class="skill-group">
+        <h3>APIs &amp; frameworks</h3>
+        <ul class="tags">
+          <li>gRPC / protobuf</li><li>REST</li><li>Redis</li><li>Django</li><li>Flask</li>
+          <li>Celery</li><li>SQLAlchemy</li><li>sqlc</li><li>goose</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Platform &amp; tooling</h3>
+        <ul class="tags">
+          <li>Docker</li><li>Kubernetes</li><li>OpenTelemetry</li><li>Datadog</li>
+          <li>GitHub Actions</li><li>Terraform</li><li>Cloud Run / Cloud Functions</li>
+          <li>Artifactory</li><li>React (working knowledge)</li>
+          <li>Unit / integration / regression testing</li><li>Git / GitHub</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- ================= education ================= -->
+  <section class="section container" aria-label="Education">
+    <p class="eyebrow">Education</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu" id="education">
+      <div class="edu-item">
+        <h3>Australian National University, Canberra</h3>
+        <p class="edu-meta">Master of Computing &middot; Jul 2017 &ndash; Jul 2019 &middot; GPA 5.7/7</p>
+        <p>Favourite topics: game theory, and neural networks &amp; deep learning. The CSIRO, Aristotle, and LoyalT spans above all ran alongside this degree.</p>
+      </div>
+      <div class="edu-item">
+        <h3>VIT University, Vellore, India</h3>
+        <p class="edu-meta">B.Tech, Computer Science &amp; Engineering &middot; Jul 2011 &ndash; Jun 2015 &middot; GPA 7.9/10</p>
+        <p>Favourite topics: algorithm design &amp; analysis, and embedded systems.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ================= off duty ================= -->
+  <section class="section container offduty" aria-label="Off duty">
+    <p class="eyebrow">Off duty</p>
+    <h2 class="section-title">Away from the keyboard</h2>
+    <p>Badminton and futsal on court, hiking off it, and a standing preference for places I haven&rsquo;t been yet.</p>
+  </section>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- ================= contact ================= -->
+  <section class="section container" id="contact" aria-label="Contact">
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">Get in touch</h2>
+    <p class="section-note">For roles, contract work, or a conversation about backend systems &mdash; email works best.</p>
+    <div class="contact-actions">
+      <a class="btn" href="mailto:findjsk@gmail.com">Email me</a>
+      <ul class="contact-links">
+        <li><a href="tel:+61450327168">+61 450 327 168</a></li>
+        <li><a href="https://github.com/tagpro">github.com/tagpro</a></li>
+        <li><a href="https://www.linkedin.com/in/jaspreet94">linkedin.com/in/jaspreet94</a></li>
+        <li class="self-link"><a href="assets/Jaspreet-Singh-CV.pdf">cv.pdf</a></li>
+      </ul>
+    </div>
+  </section>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
+</main>
 
+<footer class="footer container">
+  <span>&copy; 2026 Jaspreet Singh &middot; jaspreet.info</span>
+  <span>one static page &middot; no framework &middot; span lengths are real durations</span>
+</footer>
+
+<script src="js/site.js"></script>
 </body>
-
 </html>

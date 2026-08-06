@@ -1,2 +1,6 @@
 node_modules
 *.DS_Store
+
+# This repo is published to GitHub Pages, so everything in it is public.
+# The CV markdown carries the referees' personal mobile numbers — keep it local.
+Jaspreet Singh CV.md

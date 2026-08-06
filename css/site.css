@@ -1,0 +1,414 @@
+/* jaspreet.info
+   Career as a distributed trace. Span geometry is real: the axis runs
+   Jan 2015 -> Aug 2026 (139 months) and every --l/--w is month arithmetic
+   against that span. If a date changes, recompute both. */
+
+/* ---------- tokens ---------- */
+:root {
+  color-scheme: light;
+  --bg:       #F7F8FA;
+  --surface:  #FFFFFF;
+  --ink:      #1A2130;
+  --muted:    #5C6675;
+  --line:     #E2E6EC;
+  --accent:   #2E5BE1;   /* links, focus — and the banking series */
+  --accent-contrast: #FFFFFF;
+  --c-saas:   #128A63;   /* SaaS infrastructure */
+  --c-obs:    #C4670A;   /* observability platform */
+  --c-early:  #7E8A9C;   /* neutral: early career */
+  --wash:     rgba(46, 91, 225, 0.05);
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --tlw: 200px;          /* trace label column + gap */
+}
+
+/* Dark tokens live in one place and are applied two ways: by the explicit
+   attribute the theme toggle sets, and — for readers without JS, who never
+   get the attribute — by the system preference. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:       #131720;
+  --surface:  #1A202B;
+  --ink:      #E9ECF2;
+  --muted:    #9AA4B2;
+  --line:     #2A3140;
+  --accent:   #5E87EF;
+  --accent-contrast: #10141D;
+  --c-saas:   #21A17E;
+  --c-obs:    #C9821D;
+  --c-early:  #5D6B80;
+  --wash:     rgba(94, 135, 239, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg:       #131720;
+    --surface:  #1A202B;
+    --ink:      #E9ECF2;
+    --muted:    #9AA4B2;
+    --line:     #2A3140;
+    --accent:   #5E87EF;
+    --accent-contrast: #10141D;
+    --c-saas:   #21A17E;
+    --c-obs:    #C9821D;
+    --c-early:  #5D6B80;
+    --wash:     rgba(94, 135, 239, 0.08);
+  }
+}
+
+/* ---------- base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+img { max-width: 100%; display: block; }
+ul, ol { list-style: none; }
+.container { max-width: 1060px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 28px); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: 12px; top: -60px; z-index: 10;
+  background: var(--accent); color: var(--accent-contrast);
+  font-family: var(--mono); font-size: 0.8125rem; text-decoration: none;
+  padding: 10px 16px; border-radius: 0 0 8px 8px;
+  transition: top 0.15s ease;
+}
+.skip:focus { top: 0; }
+
+.section { margin-top: clamp(56px, 9vw, 96px); }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.71rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-weight: 640;
+  font-stretch: 125%;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  margin-bottom: 10px;
+}
+.section-note { color: var(--muted); max-width: 62ch; }
+
+/* ---------- topbar ---------- */
+.topbar {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px;
+  padding-block: 20px 0;
+  font-family: var(--mono); font-size: 0.8125rem;
+}
+.wordmark { color: var(--ink); text-decoration: none; font-weight: 500; }
+.topnav { display: flex; gap: 20px; flex-wrap: wrap; align-items: baseline; }
+.topnav a { color: var(--muted); text-decoration: none; }
+.topnav a:hover { color: var(--accent); text-decoration: underline; }
+.theme-toggle {
+  display: none;
+  font: inherit; color: var(--muted);
+  background: none; border: 0; padding: 0; cursor: pointer;
+  border-radius: 4px;
+}
+html.js .theme-toggle { display: inline-block; }
+.theme-toggle:hover { color: var(--accent); text-decoration: underline; }
+
+/* ---------- hero ---------- */
+.hero {
+  margin-top: clamp(40px, 7vw, 76px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: start;
+}
+.hero-name {
+  font-weight: 700;
+  font-stretch: 125%;
+  font-size: clamp(2.35rem, 1.1rem + 5.2vw, 4.1rem);
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.tagline {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.lede { max-width: 62ch; margin-bottom: 26px; font-size: 1.0625rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; font-family: var(--mono); font-size: 0.78rem; }
+.chips a {
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.chips a:hover { border-color: var(--accent); color: var(--accent); }
+.print-only { display: none; }
+.portrait {
+  width: clamp(96px, 15vw, 176px);
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+/* ---------- trace ---------- */
+.trace { margin-top: 30px; }
+.t-axis {
+  position: relative;
+  margin-left: var(--tlw);
+  height: 22px;
+  font-family: var(--mono); font-size: 0.71rem; color: var(--muted);
+}
+.t-axis i { position: absolute; top: 0; font-style: normal; transform: translateX(-50%); }
+.t-axis i.edge-l { transform: none; }
+.t-axis i.now { transform: translateX(-100%); color: var(--accent); font-weight: 500; }
+.m-only { display: none; }
+
+.t-body { position: relative; }
+.t-gridlines { position: absolute; inset: 0 0 0 var(--tlw); pointer-events: none; }
+.t-gridlines i { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--line); }
+.t-gridlines i.now-line { background: var(--accent); opacity: 0.45; }
+
+.t-rows { position: relative; }
+.t-row {
+  display: grid;
+  grid-template-columns: calc(var(--tlw) - 24px) 1fr;
+  column-gap: 24px;
+  align-items: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--ink);
+}
+a.t-row:hover { background: var(--wash); }
+a.t-row:hover .t-bar { opacity: 1; }
+.t-label {
+  font-family: var(--mono); font-size: 0.8125rem; line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.t-dur-m { display: none; color: var(--muted); }
+.t-track { position: relative; height: 16px; }
+.t-bar {
+  position: absolute; top: 0; height: 100%;
+  left: var(--l); width: var(--w); min-width: 4px;
+  border-radius: 4px;
+  background: var(--sc);
+  opacity: 0.92;
+  transform-origin: left center;
+}
+.t-bar.banking { --sc: var(--accent); }
+.t-bar.saas    { --sc: var(--c-saas); }
+.t-bar.obs     { --sc: var(--c-obs); }
+.t-bar.early   { --sc: var(--c-early); }
+.t-bar.study   { background: transparent; border: 1.5px solid var(--c-early); opacity: 1; }
+.t-dur {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  left: calc(var(--l) + var(--w)); padding-left: 9px;
+  font-family: var(--mono); font-size: 0.71rem; color: var(--muted);
+  white-space: nowrap;
+}
+.t-dur.before { left: auto; right: calc(100% - var(--l)); padding-left: 0; padding-right: 9px; }
+
+.t-root { padding: 7px 0 9px; }
+.t-root .t-label { font-weight: 500; }
+.t-root .t-dur-m { display: inline; }
+.t-root .t-track { height: 8px; }
+.t-bar.root { background: var(--ink); opacity: 0.15; border-radius: 3px; }
+
+a.t-row[aria-current] .t-label { font-weight: 500; color: var(--accent); }
+a.t-row[aria-current] .t-bar { opacity: 1; box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--ink); }
+a.t-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.trace-foot {
+  margin-top: 16px; margin-left: var(--tlw);
+  display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline;
+  font-family: var(--mono); font-size: 0.71rem; color: var(--muted);
+}
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.legend li { display: flex; align-items: center; gap: 7px; }
+.legend .sw { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.legend .sw.banking { background: var(--accent); }
+.legend .sw.saas    { background: var(--c-saas); }
+.legend .sw.obs     { background: var(--c-obs); }
+.legend .sw.early   { background: var(--c-early); }
+.legend .sw.study   { background: transparent; border: 1.5px solid var(--c-early); }
+
+/* load-in: bars draw like a rendering trace */
+@media (prefers-reduced-motion: no-preference) {
+  .t-bar { animation: draw 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards; animation-delay: var(--d, 0s); }
+  .t-dur { animation: fadein 0.35s ease backwards; animation-delay: calc(var(--d, 0s) + 0.4s); }
+  @keyframes draw   { from { transform: scaleX(0); } }
+  @keyframes fadein { from { opacity: 0; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ---------- role cards ---------- */
+.roles { margin-top: 34px; display: grid; gap: 12px; }
+.role {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sc, var(--line));
+  border-radius: 10px;
+  scroll-margin-top: 16px;
+}
+.role.banking { --sc: var(--accent); }
+.role.saas    { --sc: var(--c-saas); }
+.role.obs     { --sc: var(--c-obs); }
+.role.early   { --sc: var(--c-early); }
+.role summary {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px;
+  padding: 15px 20px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 10px;
+}
+.role summary::-webkit-details-marker { display: none; }
+.role summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.chev {
+  width: 9px; height: 9px; flex: none; align-self: center;
+  background: var(--muted);
+  clip-path: polygon(25% 8%, 75% 50%, 25% 92%);
+  transition: transform 0.2s ease;
+}
+.role[open] .chev { transform: rotate(90deg); }
+.role-org { font-weight: 640; font-stretch: 112%; font-size: 1.03rem; }
+.role-title { color: var(--muted); }
+.role-dates {
+  margin-left: auto;
+  font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
+  white-space: nowrap;
+}
+.role-body { padding: 2px 20px 18px 41px; }
+.role-tech { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 12px; }
+.role-body ul { list-style: none; display: grid; gap: 9px; max-width: 74ch; }
+.role-body li { padding-left: 18px; position: relative; }
+.role-body li::before {
+  content: ""; position: absolute; left: 0; top: 0.62em;
+  width: 7px; height: 2px; border-radius: 1px; background: var(--sc, var(--muted));
+}
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    :root { interpolate-size: allow-keywords; }
+    .role::details-content {
+      height: 0; overflow: clip;
+      transition: height 0.28s ease, content-visibility 0.28s allow-discrete;
+    }
+    .role[open]::details-content { height: auto; }
+  }
+}
+
+/* ---------- skills ---------- */
+.skill-groups { display: grid; gap: 26px; margin-top: 26px; }
+.skill-group h3 {
+  font-family: var(--mono); font-weight: 500; font-size: 0.71rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 12px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li {
+  font-family: var(--mono); font-size: 0.75rem;
+  border: 1px solid var(--line); background: var(--surface);
+  border-radius: 6px; padding: 4px 10px;
+}
+
+/* ---------- education / off duty ---------- */
+.edu { display: grid; gap: 22px; margin-top: 26px; scroll-margin-top: 16px; }
+.edu-item h3 { font-size: 1rem; font-weight: 640; font-stretch: 112%; }
+.edu-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin: 2px 0 4px; }
+.edu-item p { color: var(--muted); max-width: 62ch; }
+.offduty p { max-width: 62ch; }
+
+/* ---------- contact ---------- */
+.contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 22px; }
+.btn {
+  display: inline-block;
+  background: var(--accent); color: var(--accent-contrast);
+  font-weight: 600; text-decoration: none;
+  border-radius: 8px; padding: 11px 22px;
+}
+.btn:hover { filter: brightness(1.07); }
+.contact-links { display: flex; flex-wrap: wrap; gap: 4px 18px; font-family: var(--mono); font-size: 0.8125rem; }
+
+/* ---------- footer ---------- */
+.footer {
+  margin-top: clamp(64px, 10vw, 110px);
+  border-top: 1px solid var(--line);
+  padding-block: 26px 40px;
+  display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
+  font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
+}
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--accent); }
+
+/* ---------- mobile: the trace restacks, geometry survives ---------- */
+@media (max-width: 700px) {
+  :root { --tlw: 0px; }
+  /* Right-aligned nav wraps into ragged lines at this width. Stack it under
+     the wordmark instead, left-aligned and tight. */
+  .topbar { flex-direction: column; align-items: flex-start; gap: 9px; }
+  .topnav { gap: 6px 16px; font-size: 0.75rem; }
+  .t-axis { height: 20px; }
+  .d-only { display: none; }
+  .m-only { display: inline; }
+  .t-row { grid-template-columns: 1fr; row-gap: 5px; padding: 8px 0; }
+  .t-label { font-size: 0.75rem; }
+  .t-dur-m { display: inline; }
+  .t-track { height: 12px; }
+  .t-dur { display: none; }
+  .t-root .t-track { height: 6px; }
+  .trace-foot { margin-left: 0; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .portrait { grid-row: 1; width: 96px; }
+  .role summary { padding: 13px 15px; }
+  .role-dates { margin-left: 0; flex-basis: 100%; padding-left: 21px; }
+  .role-body { padding: 0 15px 16px 15px; }
+}
+
+/* ---------- print: it is a CV, so it has to print ---------- */
+@media print {
+  :root {
+    --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; --line: #bbb;
+    --accent: #1c3fa8; --tlw: 178px;
+  }
+  html { scroll-behavior: auto; }
+  body { font-size: 10.5pt; line-height: 1.45; }
+  /* .self-link is any link to the CV itself — meaningless once this IS the CV. */
+  .topbar, .skip, .theme-toggle, .portrait, .contact-actions .btn,
+  .screen-only, .self-link { display: none; }
+  .hero { margin-top: 0; display: block; }
+  /* On paper the chips are the contact block, so they stay — as plain text. */
+  .print-only { display: block; }
+  .chips { gap: 4px 14px; margin-bottom: 0; }
+  .chips a { border: 0; background: none; padding: 0; color: var(--ink); }
+  .section { margin-top: 22pt; }
+  .trace, .roles { break-inside: auto; }
+  /* No hover to reveal a clipped label on paper: let every label show in full. */
+  .t-label { font-size: 8pt; white-space: normal; overflow: visible; text-overflow: clip; }
+  .t-bar { animation: none; opacity: 1; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .role { break-inside: avoid; border-radius: 0; box-shadow: none; }
+  .role::details-content { height: auto !important; }
+  .chev { display: none; }
+  .role-body { padding-left: 20px; }
+  .footer { margin-top: 20pt; }
+  a { text-decoration: none; }
+}
