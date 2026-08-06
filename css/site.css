@@ -11,7 +11,7 @@
   --ink:      #1A2130;
   --muted:    #5C6675;
   --line:     #E2E6EC;
-  --accent:   #2E5BE1;   /* links, focus — and the banking series */
+  --accent:   #2E5BE1;   /* links, focus, and the banking series */
   --accent-contrast: #FFFFFF;
   --c-saas:   #128A63;   /* SaaS infrastructure */
   --c-obs:    #C4670A;   /* observability platform */
@@ -23,8 +23,8 @@
 }
 
 /* Dark tokens live in one place and are applied two ways: by the explicit
-   attribute the theme toggle sets, and — for readers without JS, who never
-   get the attribute — by the system preference. */
+   attribute the theme toggle sets, and (for readers without JS, who never
+   get the attribute) by the system preference. */
 :root[data-theme="dark"] {
   color-scheme: dark;
   --bg:       #131720;
@@ -392,11 +392,11 @@ a.t-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   }
   html { scroll-behavior: auto; }
   body { font-size: 10.5pt; line-height: 1.45; }
-  /* .self-link is any link to the CV itself — meaningless once this IS the CV. */
+  /* .self-link is any link to the CV itself: meaningless once this IS the CV. */
   .topbar, .skip, .theme-toggle, .portrait, .contact-actions .btn,
   .screen-only, .self-link { display: none; }
   .hero { margin-top: 0; display: block; }
-  /* On paper the chips are the contact block, so they stay — as plain text. */
+  /* On paper the chips are the contact block, so they stay, as plain text. */
   .print-only { display: block; }
   .chips { gap: 4px 14px; margin-bottom: 0; }
   .chips a { border: 0; background: none; padding: 0; color: var(--ink); }

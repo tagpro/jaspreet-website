@@ -1,4 +1,4 @@
-/* jaspreet.info — progressive enhancement only.
+/* jaspreet.info: progressive enhancement only.
    Without this file the page is fully readable: every role card ships open
    and every trace span is a plain anchor to its card. */
 (function () {
